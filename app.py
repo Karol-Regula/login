@@ -12,9 +12,9 @@ def render ():
 def auth():
     print request.headers
     if (request.form['user'] == "bill" and request.form['password'] == "drowssap"):
-        return render_template('positive.html')
+        return render_template('authentication.html', result = "You win!")
     else:
-        return render_template('negative.html')
+        return render_template('authentication.html', result = "You fail!")
 
 if __name__ == '__main__':
     app.debug = True
