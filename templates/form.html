@@ -3,11 +3,12 @@
 <html>
   <h1>
     <center>
-      Forms!
+      Login or Register:
     </center>
   </h1>
   <body>
     <center>
+      {{message}}<br><br>
       <form action = "/authenticate/" method = "POST">
 	Username:
 	<input type="text" name="user">
@@ -15,7 +16,8 @@
 	Password:
 	<input type="password" name="password">
 	<br><br>
-	<input type="submit" value="Submit">
+	<input type="submit" name="action" value="Login">
+	<input type="submit" name="action" value="Register">
       </form>
     </center>
   </body>
