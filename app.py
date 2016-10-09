@@ -14,6 +14,8 @@ def welcome ():
 
 @app.route("/login/")
 def login ():
+    if (len(session.keys()) > 0):
+        return render_template('welcome.html',user = session['user'])
     return render_template('form.html')
 
 @app.route("/authenticate/", methods = ['POST']) #only post requests allowed
