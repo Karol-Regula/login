@@ -1,2 +1,2 @@
 # login
-Basic login / register template that uses a session to track logins and hashes passwords for additional security.
+Basic login / register flask app that incorporates sessions to track users and uses hashed passwords for additional security.
