@@ -28,7 +28,7 @@ def auth():
     elif (request.form['action'] == "register"):
         return authenticate.register(request.form['user'], request.form['password'])
 
-@app.route("/logout/", methods = ['POST'])
+@app.route("/logout/", methods = ['POST', 'GET'])
 def logout():
     if (len(session.keys()) > 0):
         session.pop('user')
