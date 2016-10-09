@@ -8,10 +8,10 @@ def login(user, password):
         #print line[comma + 1:]
         #print hashlib.sha224(password).hexdigest()
         if (user == line[:comma] and hashlib.sha224(password).hexdigest() + '\n' == line[comma + 1:]):
-            return render_template('authentication.html', result = "Login successful")
+            return (render_template('authentication.html', result = "Login successful"), 1)
         if (user == line[:comma] and not hashlib.sha224(password).hexdigest() + '\n' == line[comma + 1:]):
-            return render_template('form.html', message = "Incorrect password")
-    return render_template('form.html', message = "Username does not exist")
+            return (render_template('form.html', message = "Incorrect password"), 0)
+    return (render_template('form.html', message = "Username does not exist"), 0)
 
 def register(user, password):
     credentials = open('data/credentials.csv', 'r')
